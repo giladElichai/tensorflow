@@ -1,6 +1,7 @@
 # welcome 
 --------------------------------------------------------------------------------
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<br/><br/>
  first, some logistics 
 
 ## Requirements
@@ -11,6 +12,7 @@
     openCV
 
 ## Cnn Architecture Implementation
+<img src="img/cnn.png" alt="cnn" width="300"/>
 
     known cnn Architecture, implementet with tensorflow/keras 
 
@@ -20,6 +22,7 @@
 
 
 ## Segmentation Architecture Implementation
+<img src="img/semantic-segmentation.png" alt="cnn" width="300"/>
 
     semantic segmentation project, implementet with tensorflow/keras 
 

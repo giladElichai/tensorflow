@@ -23,5 +23,5 @@
 
     semantic segmentation project, implementet with tensorflow/keras 
 
-* [SegNet](https://github.com/giladElichai/public/tree/main/CnnArchitecture/VGG)
-* [UNet](https://github.com/giladElichai/public/tree/main/CnnArchitecture/ResNet)
+* [SegNet](https://github.com/giladElichai/public/tree/main/segmentation/SEGNet)
+* [UNet](https://github.com/giladElichai/public/tree/main/segmentation/UNET)

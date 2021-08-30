@@ -1,9 +1,7 @@
 # welcome 
 --------------------------------------------------------------------------------
 
-In this repository you will find some of my projects
-
-bbut first, some logistics 
+ first, some logistics 
 
 ## Requirements
 
@@ -14,6 +12,6 @@ bbut first, some logistics
 
 ## Cnn Architecture Implementation
 
-* [VGG](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/VGGNet)
-* [ResNet](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/ResNet)
+* [VGG](https://github.com/giladElichai/public/tree/main/CnnArchitecture/VGG)
+* [ResNet](https://github.com/giladElichai/public/tree/main/CnnArchitecture/ResNet)
  

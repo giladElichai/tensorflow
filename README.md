@@ -16,6 +16,7 @@
 
     known cnn Architecture, implementet with tensorflow/keras 
 
+* [GoogLeNet/InceptionV1](https://github.com/giladElichai/public/tree/main/CnnArchitecture/GoogLeNet_InceptionV1)
 * [VGG](https://github.com/giladElichai/public/tree/main/CnnArchitecture/VGG)
 * [ResNet](https://github.com/giladElichai/public/tree/main/CnnArchitecture/ResNet)
  

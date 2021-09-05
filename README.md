@@ -36,4 +36,4 @@
 
     ObjectDetaction project, implementet with tensorflow/keras 
 
-* [Yolov1](https://github.com/giladElichai/public/tree/main/ObjectDetaction/Yolov1)
+* [YoloV1](https://github.com/giladElichai/public/tree/main/ObjectDetaction/Yolov1)

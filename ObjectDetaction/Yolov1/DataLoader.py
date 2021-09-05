@@ -93,11 +93,6 @@ class DataGenerator(Sequence) :
                     label_matrix[i, j, 21:25] = [x_cell, y_cell, width_cell, height_cell] # Box coordinates
                     label_matrix[i, j, class_label] = 1 # Set one hot encoding for class_label
 
-                # if label_matrix[i, j, 24] == 0:
-                #     label_matrix[i, j, 24] = 1 # Set that there exists an object
-                #     label_matrix[i, j, 20:24] = [x_cell, y_cell, width_cell, height_cell] # Box coordinates
-                #     label_matrix[i, j, class_label] = 1 # Set one hot encoding for class_label
-
         return img, label_matrix
         
 

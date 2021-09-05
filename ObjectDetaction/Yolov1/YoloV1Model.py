@@ -65,13 +65,13 @@ def GetYoloV1Model(grid_size, num_boxes, num_classes, input_shape = (448, 448, 3
 
 def test():
 
-    model = GetYoloV1Model(7, 2, 20, input_shape = (448, 448, 3))
+    # model = GetYoloV1Model(7, 2, 20, input_shape = (448, 448, 3))
 
-    import numpy as np
-    x = np.random.rand(4,448,448,3)
-    model(x)
+    # import numpy as np
+    # x = np.random.rand(4,448,448,3)
+    # model(x)
 
-    model.summary()
+    # model.summary()
 
     x = 1 
 

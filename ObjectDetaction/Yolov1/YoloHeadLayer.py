@@ -35,12 +35,12 @@ class YoloHeadLayer(Layer):
     # box1
     confs1 = Activation("sigmoid")( tf.reshape(input[..., C:C+1],[-1, S, S, 1]) )
     box1_xy = Activation("sigmoid")( tf.reshape(input[..., C+1:C+3],[-1, S, S, 2]) )
-    box1_wh = Activation("sigmoid")( tf.reshape(input[..., C+3:C+5],[-1, S, S, 2]) ) * S # since hw are in relation to cell sizes
+    box1_wh = Activation("sigmoid")( tf.reshape(input[..., C+3:C+5],[-1, S, S, 2]) ) * S
     
     #box2
     confs2 = Activation("sigmoid")( tf.reshape(input[..., C+5:C+6],[-1, S, S, 1]) )
     box2_xy = Activation("sigmoid")( tf.reshape(input[..., C+6:C+8],[-1, S, S, 2]) )
-    box2_wh = Activation("sigmoid")( tf.reshape(input[..., C+8:],[-1, S, S, 2]) ) * S # since hw are in relation to cell sizes
+    box2_wh = Activation("sigmoid")( tf.reshape(input[..., C+8:],[-1, S, S, 2]) ) * S
 
 
     outputs = concatenate([class_probs, confs1, box1_xy, box1_wh, confs2, box2_xy, box2_wh])

@@ -54,9 +54,9 @@ if __name__ == "__main__":
     print(x_val.shape)
     print(y_val.shape)
 
-    mcp_save = ModelCheckpoint('best_weight.hdf5', save_best_only=True, monitor='val_loss', mode='min', verbose=1)
+    mcp = ModelCheckpoint('best_weight.hdf5', save_best_only=True, monitor='val_loss', mode='min', verbose=1)
     lr_sc = LearningRateScheduler(decay, verbose=1)
-    rl = ReduceLROnPlateau(monitor='val_dense_accuracy',factor=0.1, patience=5,verbose=1,mode="max",min_lr=0.000001)
+    rl = ReduceLROnPlateau(monitor='val_loss',factor=0.1, patience=5,verbose=1,mode="max",min_lr=0.000001)
 
     initial_lrate = 0.001
 
@@ -68,9 +68,7 @@ if __name__ == "__main__":
     history = model.fit(x=train_dg,
             epochs = 100,
             validation_data = train_val,
-            workers=2,
-            callbacks=[mcp_save, lr_sc, rl]
-
+            callbacks=[mcp, lr_sc, rl]
             )
     
     model.save("yolov1_model")

@@ -128,8 +128,14 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+#images
+*.png
+*jpg
 
 
-
-*.h5
+#keras models
+*h5
 *.hdf5
+*pb
+*.index
+*.data*

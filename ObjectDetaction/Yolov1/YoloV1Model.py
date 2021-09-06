@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Dense, Input, Dropout, Flatten, Reshape, Activation, LeakyReLU
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, GlobalMaxPooling2D
+from tensorflow.keras.layers import Conv2D, MaxPooling2D
 from tensorflow.keras.regularizers import l2
 
 
@@ -50,7 +50,7 @@ def GetYoloV1Model(grid_size, num_boxes, num_classes, input_shape = (448, 448, 3
 
     x = Flatten()(x)
     x = Dense(4096)(x)
-    x = LeakyReLU(alpha=0.3)(x)
+    x = LeakyReLU(alpha=0.1)(x)
     x = Dropout(0.5)(x)
     x = Dense(out_size, activation='relu')(x)
 

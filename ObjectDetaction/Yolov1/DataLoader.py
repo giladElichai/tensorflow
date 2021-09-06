@@ -93,30 +93,28 @@ class DataGenerator(Sequence) :
                     label_matrix[i, j, 21:25] = [x_cell, y_cell, width_cell, height_cell] # Box coordinates
                     label_matrix[i, j, class_label] = 1 # Set one hot encoding for class_label
 
+
         return img, label_matrix
         
 
-
-
-
 def test():
 
-    csv_file = "D:\\programing\\DataSets\\ObjectDetection\\pascalVoc\\train.csv"
-    img_dir = "D:\\programing\\DataSets\\ObjectDetection\\pascalVoc\\images"
-    labels_dir = "D:\\programing\\DataSets\\ObjectDetection\\pascalVoc\\labels"
-    val_csv_file = "D:\\programing\\DataSets\\ObjectDetection\\pascalVoc\\test.csv"
+    # csv_file = "D:\\programing\\DataSets\\ObjectDetection\\pascalVoc\\train.csv"
+    # img_dir = "D:\\programing\\DataSets\\ObjectDetection\\pascalVoc\\images"
+    # labels_dir = "D:\\programing\\DataSets\\ObjectDetection\\pascalVoc\\labels"
+    # val_csv_file = "D:\\programing\\DataSets\\ObjectDetection\\pascalVoc\\test.csv"
 
-    train_dg = DataGenerator(csv_file, img_dir, labels_dir, (448, 448), 4, 7, 2, 20)
-    train_val = DataGenerator(val_csv_file, img_dir, labels_dir, (448, 448), 16, 7, 2, 20, shuffle=False)
+    # train_dg = DataGenerator(csv_file, img_dir, labels_dir, (448, 448), 4, 7, 2, 20)
+    # train_val = DataGenerator(val_csv_file, img_dir, labels_dir, (448, 448), 16, 7, 2, 20, shuffle=False)
 
-    x_train, y_train = train_dg.__getitem__(0)
-    x_val, y_val = train_val.__getitem__(0)
+    # x_train, y_train = train_dg.__getitem__(0)
+    # x_val, y_val = train_val.__getitem__(0)
 
-    print(x_train.shape)
-    print(y_train.shape)
+    # print(x_train.shape)
+    # print(y_train.shape)
 
-    print(x_val.shape)
-    print(y_val.shape)
+    # print(x_val.shape)
+    # print(y_val.shape)
 
     x = 1 
 

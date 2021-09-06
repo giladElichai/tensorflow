@@ -46,23 +46,23 @@ def yolo_loss(y_true, y_pred):
 
     mse = tf.keras.losses.MeanSquaredError()
     
-    label_class = y_true[..., :20]  # ? * 7 * 7 * 20
-    label_box = y_true[..., 21:25]  # ? * 7 * 7 * 4
-    response_mask = y_true[..., 20:21]  # ? * 7 * 7
+    label_class = y_true[..., :20]  # bs * 7 * 7 * 20
+    label_box = y_true[..., 21:25]  # bs * 7 * 7 * 4
+    response_mask = y_true[..., 20:21]  # bs * 7 * 7 * 1
     
 
-    predict_class = y_pred[..., :20]  # ? * 7 * 7 * 20
-    predict_trust = concatenate([ y_pred[..., 20:21], y_pred[..., 25:26] ])  # ? * 7 * 7 * 2
-    predict_box = concatenate([ y_pred[..., 21:25], y_pred[..., 26:] ])  # ? * 7 * 7 * 8
-
-    predict_box1 =  y_pred[..., 21:25]  # ? * 7 * 7 * 4
-    predict_box2 = y_pred[..., 26:] # ? * 7 * 7 * 4
+    predict_class = y_pred[..., :20]  # bs * 7 * 7 * 20
+    predict_box1 =  y_pred[..., 21:25]  # bs * 7 * 7 * 4
+    predict_box2 = y_pred[..., 26:] # bs * 7 * 7 * 4
 
     iou_b1 = intersection_over_union(label_box, predict_box1)
     iou_b2 = intersection_over_union(label_box, predict_box2)
     ious = concatenate([tf.expand_dims(iou_b1, 0), tf.expand_dims(iou_b2, 0)], axis=0)
 
+
     iou_maxes, bestbox = K.max(ious, axis=0), tf.cast(K.argmax(ious, axis=0), tf.float32)
+
+    #print("bestbox: ", bestbox.numpy())
 
     box_pred = response_mask * ( (1 - bestbox) * predict_box1 + bestbox * predict_box2 )  
     box_label = response_mask * label_box
@@ -143,12 +143,8 @@ def test():
 
     # pred = model(x_train)
 
-    # from YoloV1Loss_old import yolo_loss1
-    # loss = yolo_loss1(y_train, pred)
+    # loss = yolo_loss(tf.constant(y_train), pred)
     # print(loss)
-
-    # loss_new = yolo_loss(tf.constant(y_train), pred)
-    # print(loss_new)
 
 if __name__ == "__main__":
     test()

@@ -129,8 +129,8 @@ dmypy.json
 .pyre/
 
 #images
-*.png
-*jpg
+# *.png
+# *jpg
 
 
 #keras models

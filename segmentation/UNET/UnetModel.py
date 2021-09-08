@@ -4,9 +4,9 @@ from tensorflow.keras.models import Model
 
 def conv_block(input_tensor, filters, n_blocks=2, kernel_size=3, padding='same', initializer="he_normal"):
 
-    x = input
+    x = input_tensor
     for _ in range(n_blocks):
-        x = Conv2D(filters=filters, kernel_size=kernel_size, padding=padding, kernel_initializer=initializer)(input_tensor)
+        x = Conv2D(filters=filters, kernel_size=kernel_size, padding=padding, kernel_initializer=initializer)(x)
         x = BatchNormalization()(x)
         x = Activation("relu")(x)
     return x

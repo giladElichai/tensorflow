@@ -31,9 +31,18 @@
 * [UNet](https://github.com/giladElichai/public/tree/main/segmentation/UNET)
 
 
-## ObjectDetaction Architecture Implementation
+## Object Detaction Architecture Implementation
 <img src="img/yolo_.png" alt="cnn" width="300"/>
 
-    ObjectDetaction project, implementet with tensorflow/keras 
+    ObjectD etaction project, implementet with tensorflow/keras 
 
 * [YoloV1](https://github.com/giladElichai/public/tree/main/ObjectDetaction/Yolov1)
+
+
+
+## PaperImplementations
+
+    Paper Implementations, implementet with tensorflow/keras     
+
+* [Residual Attention](https://github.com/giladElichai/public/tree/main/PaperImplementations/ResidualAttention)
+

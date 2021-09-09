@@ -47,5 +47,5 @@ def GetVGGModel(input_shape, VGG_type="VGG16", out_channels=10):
 
 if __name__ == "__main__":
 
-    model = GetVGGModel((128,128,3), 16, 10)
+    model = GetVGGModel((128,128,3), "VGG16", 10)
 

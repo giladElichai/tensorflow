@@ -5,12 +5,6 @@ from tensorflow.keras.utils import to_categorical ,Sequence
 import numpy as np
 
 
-def assert_map_range(mask,class_map, img_size):
-    mask = mask.astype("uint8")
-    for j in range(img_size):
-        for k in range(img_size):
-            assert mask[j][k] in class_map , tuple(mask[j][k])
-
 def form_2D_label(mask,class_map):
     mask = mask.astype("uint8")
     label = np.zeros(mask.shape[:2],dtype= np.uint8)
@@ -42,7 +36,7 @@ class DataGenerator(Sequence):
 
         list_IDs_temp = [k for k in indexes]
 
-        X, y = self.__data_generation(list_IDs_temp)
+        X, y = self.data_generation(list_IDs_temp)
 
         return X, y
 
@@ -51,7 +45,7 @@ class DataGenerator(Sequence):
         if self.shuffle == True:
             np.random.shuffle(self.indexes)
 
-    def __data_generation(self, list_IDs_temp):
+    def data_generation(self, list_IDs_temp):
         
         batch_imgs = list()
         batch_labels = list()

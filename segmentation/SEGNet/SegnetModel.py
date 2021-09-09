@@ -41,7 +41,9 @@ def GetSegnetModel(input_shape, convBlocks, kernel_size=3, out_channels=1):
             x = conv_block(x, filters=filters, n_blocks=1, kernel_size=kernel_size)
         mask = pools_indices[l-i-1]
         x = tfa.layers.MaxUnpooling2D()(x, mask)
-        x = conv_block(x, filters=filters, n_blocks=n_blocks, kernel_size=kernel_size)
+        x = conv_block(x, filters=filters, n_blocks=n_blocks-1, kernel_size=kernel_size)
+    
+    x = conv_block(x, filters=filters, n_blocks=1, kernel_size=kernel_size)
         
     x = Dropout(0.5)(x)
     # output head

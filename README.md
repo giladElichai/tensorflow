@@ -29,6 +29,7 @@
 
 * [SegNet](https://github.com/giladElichai/public/tree/main/segmentation/SEGNet)
 * [UNet](https://github.com/giladElichai/public/tree/main/segmentation/UNET)
+* [LinkNet](https://github.com/giladElichai/public/tree/main/segmentation/LinkNet)
 
 
 ## Object Detaction Architecture Implementation

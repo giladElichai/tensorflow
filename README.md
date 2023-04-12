@@ -41,7 +41,7 @@
 
 
 
-## PaperImplementations
+## Paper Implementations
 
     Paper Implementations, implementet with tensorflow/keras     
 
